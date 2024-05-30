@@ -12,6 +12,7 @@
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.19.2",
+    "react-scripts": "^5.0.1",
     "sequelize": "^6.37.3",
     "socket.io": "^4.7.5",
     "sqlite3": "^5.1.7"
