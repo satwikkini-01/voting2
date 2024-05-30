@@ -4,7 +4,7 @@ import io from 'socket.io-client';
 import Timer from './Timer';
 import './App.css'; // Import the CSS file
 
-const socket = io('http://localhost:5001'); // Change to the new port
+const socket = io('https://voting2.onrender.com'); // Change to the new port
 
 const App = () => {
   const [votes, setVotes] = useState({ participant1: 0, participant2: 0 });
@@ -15,7 +15,7 @@ const App = () => {
       setVotes(newVotes);
     });
 
-    axios.get('http://localhost:5001/api/votes') // Change to the new port
+    axios.get('https://voting2.onrender.com/api/votes') // Change to the new port
       .then((response) => {
         setVotes(response.data);
       }).catch(error => {
@@ -25,7 +25,7 @@ const App = () => {
 
   const handleVote = (participant) => {
     if (!voted) {
-      axios.post('http://localhost:5001/api/vote', { participant }) // Change to the new port
+      axios.post('https://voting2.onrender.com/api/vote', { participant }) // Change to the new port
         .then(() => {
           setVoted(true);
         })
