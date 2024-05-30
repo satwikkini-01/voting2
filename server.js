@@ -35,7 +35,7 @@ app.use(express.json());
 
 // CORS configuration
 app.use(cors({
-  origin: 'http://localhost:3000', // Replace with your React app's URL
+  origin: 'https://voting2.onrender.com', // Replace with your React app's URL
   methods: ['GET', 'POST'],
   allowedHeaders: ['Content-Type'],
 }));
