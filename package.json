@@ -1,20 +1,21 @@
 {
-  "name": "debate-voting-system",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "name": "my-react-app",
+  "version": "0.1.0",
+  "private": true,
   "dependencies": {
-    "cors": "^2.8.5",
-    "express": "^4.19.2",
-    "react-scripts": "^5.0.1",
-    "sequelize": "^6.37.3",
-    "socket.io": "^4.7.5",
-    "sqlite3": "^5.1.7"
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-scripts": "5.0.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "vercel-build": "npm run build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "engines": {
+    "node": "14.x",
+    "npm": "6.x"
   }
 }
