@@ -11,6 +11,12 @@ const App = () => {
   const [voted, setVoted] = useState(false);
 
   useEffect(() => {
+    // Retrieve voting status from local storage
+    const hasVoted = localStorage.getItem('hasVoted');
+    if (hasVoted) {
+      setVoted(true);
+    }
+
     socket.on('voteUpdate', (newVotes) => {
       setVotes(newVotes);
     });
@@ -28,6 +34,8 @@ const App = () => {
       axios.post('https://voting2.onrender.com/api/vote', { participant }) // Change to the new port
         .then(() => {
           setVoted(true);
+          // Store voting status in local storage
+          localStorage.setItem('hasVoted', true);
         })
         .catch(error => {
           console.error('Error submitting vote:', error);
@@ -37,7 +45,6 @@ const App = () => {
 
   return (
     <div className="container">
-      <img src="debate-voting-system/frontend/src/logo.jpeg" alt="Logo" className="logo" /> {/* Add this line */}
       <h1>Debate Competition Voting</h1>
       <div>
         <button onClick={() => handleVote('participant1')} disabled={voted}>Vote for Participant 1</button>
